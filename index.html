@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labmetrica | Анализ лабораторной динамики для клинической практики</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="images/logo-hero.png" alt="Labmetrica" class="logo-img">
+                </a>
+                <div class="nav-links">
+                    <a href="#value">Ценность</a>
+                    <a href="#process">Процесс работы</a>
+                    <a href="#specialists">Для специалистов</a>
+                    <a href="#integration">Интеграция</a>
+                    <a href="#request" class="nav-button">Демо-доступ</a>
+                </div>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">От разрозненных анализов — к целостной картине пациента</h1>
+                    <p class="hero-subtitle">Labmetrica — это специализированный инструмент для врачей, который автоматически структурирует лабораторные данные, выстраивает их в хронологическую историю и выделяет клинически значимые тренды.</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">типов анализов</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">лабораторных сетей</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">99.3%</span>
+                            <span class="stat-label">точность распознавания</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#request" class="btn btn-primary">Запросить демонстрацию</a>
+                        <a href="#value" class="btn btn-text">Узнать подробнее</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/main.jpeg" alt="Labmetrica — структурирование медицинских данных" class="hero-visual">
+                    <div class="image-caption">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <span>Каждый анализ — часть общей картины здоровья пациента</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="value" class="section value-section">
+            <div class="container">
+                <h2 class="section-title">Как Labmetrica меняет клиническую практику</h2>
+                <div class="value-content">
+                    <div class="value-text">
+                        <p>Ежедневно врачи сталкиваются с проблемой фрагментированной информации: анализы из разных лабораторий, в разных форматах, за разные периоды. Сопоставление этих данных вручную отнимает драгоценное время приёма и увеличивает риск пропустить важный тренд.</p>
+                        
+                        <p>Labmetrica решает эту проблему на технологическом уровне. Система не просто хранит анализы — она <strong>интеллигентно их обрабатывает</strong>:</p>
+                        
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check-circle"></i> Автоматически определяет тип исследования и нормативные значения</li>
+                            <li><i class="fas fa-check-circle"></i> Сопоставляет одноимённые показатели из разных лабораторий</li>
+                            <li><i class="fas fa-check-circle"></i> Строит индивидуальные референсные коридоры с учётом пола и возраста</li>
+                            <li><i class="fas fa-check-circle"></i> Выделяет статистически значимые изменения, даже в пределах нормы</li>
+                        </ul>
+                        
+                        <p>Врач получает не набор цифр, а <strong>готовый аналитический отчёт</strong>, на основании которого можно принимать обоснованные клинические решения.</p>
+                    </div>
+                    <div class="value-visual">
+                        <div class="visual-card">
+                            <h3><i class="fas fa-brain"></i> Интеллектуальная обработка данных</h3>
+                            <p>Система использует алгоритмы машинного обучения, специально обученные на медицинских текстах, для точного распознавания даже нестандартных форматов лабораторных бланков.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="process" class="section process-section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Детальный процесс работы с данными</h2>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-icon">
+                                <i class="fas fa-file-upload"></i>
+                            </div>
+                            <h3>1. Загрузка и распознавание</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Система принимает PDF, JPG или PNG файлы из любых источников:</p>
+                            <ul>
+                                <li>Прямая загрузка из личных кабинетов лабораторий (Инвитро, Гемотест, KDL, Ситилаб)</li>
+                                <li>Скан бумажных бланков, включая рукописные пометки</li>
+                                <li>Экспорт из медицинских информационных систем</li>
+                            </ul>
+                            <p class="step-note"><i class="fas fa-info-circle"></i> Алгоритмы оптического распознавания (OCR) адаптированы под специфику медицинских документов и сохраняют контекстную информацию.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h3>2. Структурирование и нормализация</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Извлечённые данные проходят многоуровневую обработку:</p>
+                            <ul>
+                                <li><strong>Идентификация показателя</strong> — система определяет, какой именно параметр был измерен, даже при разных названиях в разных лабораториях</li>
+                                <li><strong>Стандартизация единиц измерения</strong> — автоматический пересчёт в общепринятые единицы для корректного сравнения</li>
+                                <li><strong>Привязка к референсным значениям</strong> — с учётом пола, возраста и методологии исследования</li>
+                                <li><strong>Валидация данных</strong> — проверка на ошибки измерения и технические артефакты</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>3. Анализ и визуализация</h3>
+                        </div>
+                        <div class="step-content">
+                            <p>Подготовленные данные становятся основой для клинического анализа:</p>
+                            <ul>
+                                <li><strong>Динамические графики</strong> — изменение каждого показателя во времени с выделением значимых трендов</li>
+                                <li><strong>Корреляционный анализ</strong> — выявление взаимосвязей между различными параметрами</li>
+                                <li><strong>Автоматические уведомления</strong> — система выделяет показатели, требующие особого внимания врача</li>
+                                <li><strong>Экспорт отчётов</strong> — возможность включить графики и анализ в медицинскую документацию</li>
+                            </ul>
+                            <p class="step-note"><i class="fas fa-lightbulb"></i> Врач видит не просто цифры, а закономерности, которые могут указывать на ранние стадии заболеваний или эффективность терапии.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="specialists" class="section specialists-section">
+            <div class="container">
+                <h2 class="section-title">Специализированные решения для различных областей медицины</h2>
+                
+                <div class="specialists-content">
+                    <div class="specialty-detail">
+                        <h3><i class="fas fa-seedling"></i> Эндокринология</h3>
+                        <p>Для эндокринологов критически важна динамика гормональных показателей. Labmetrica предоставляет специализированные панели для:</p>
+                        <ul>
+                            <li><strong>Контроля диабета</strong> — совместный анализ HbA1c, глюкозы крови, фруктозамина с построением индивидуальных целевых диапазонов</li>
+                            <li><strong>Мониторинга функции щитовидной железы</strong> — трекинг ТТГ, свободного T3/T4, антител с учётом фармакотерапии</li>
+                            <li><strong>Оценки метаболического статуса</strong> — комплексный анализ липидного профиля, инсулина, лептина и адипокинов</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specialty-detail">
+                        <h3><i class="fas fa-tint"></i> Гематология</h3>
+                        <p>В гематологии важны не только абсолютные значения, но и сдвиги в клеточном составе. Система обеспечивает:</p>
+                        <ul>
+                            <li><strong>Детализированный анализ гемограммы</strong> — раздельный трекинг всех фракций лейкоцитов, эритроцитарных индексов, тромбоцитов</li>
+                            <li><strong>Визуализация динамики миелограммы</strong> — при последовательных исследованиях костного мозга</li>
+                            <li><strong>Контроль коагулограммы</strong> — мониторинг параметров свёртываемости у пациентов на антикоагулянтной терапии</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specialty-detail">
+                        <h3><i class="fas fa-filter"></i> Нефрология</h3>
+                        <p>Для нефрологов ключевое значение имеет скорость изменения почечных показателей. Labmetrica предлагает:</p>
+                        <ul>
+                            <li><strong>Расчёт и визуализацию СКФ</strong> — автоматический расчёт скорости клубочковой фильтрации по разным формулам (CKD-EPI, MDRD) с построением кривой прогрессирования</li>
+                            <li><strong>Баланс электролитов</strong> — мониторинг натрия, калия, кальция, фосфора с учётом диализного статуса</li>
+                            <li><strong>Оценка протеинурии</strong> — анализ соотношения белок/креатинин в моче в динамике</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="specialists-note">
+                    <p><i class="fas fa-cogs"></i> Для каждой специальности система предоставляет специализированные шаблоны отчётов и наборы анализируемых показателей, соответствующих клиническим рекомендациям.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="integration" class="section integration-section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Интеграция в рабочий процесс</h2>
+                
+                <div class="integration-content">
+                    <div class="integration-text">
+                        <p>Labmetrica разработана с учётом реальных рабочих процессов в медицинских учреждениях. Система не требует радикального изменения привычных схем работы.</p>
+                        
+                        <h3>Варианты использования:</h3>
+                        
+                        <div class="use-case">
+                            <h4><i class="fas fa-user-md"></i> Индивидуальная практика врача</h4>
+                            <p>Врач самостоятельно загружает анализы пациентов через защищённый веб-интерфейс. Данные хранятся в зашифрованном виде и доступны только лечащему врачу. Идеально для частных специалистов и небольших кабинетов.</p>
+                        </div>
+                        
+                        <div class="use-case">
+                            <h4><i class="fas fa-hospital-alt"></i> Клиническое учреждение</h4>
+                            <p>Интеграция с медицинскими информационными системами через API. Данные лаборатории автоматически поступают в Labmetrica, результаты анализа доступны в карте пациента. Поддерживается разграничение прав доступа для врачей, заведующих отделениями и администрации.</p>
+                        </div>
+                        
+                        <div class="use-case">
+                            <h4><i class="fas fa-clinic-medical"></i> Диагностический центр</h4>
+                            <p>Предоставление доступа к Labmetrica как дополнительной услуги для врачей-партнёров. Врачи получают расширенную аналитику по исследованиям, проведённым в вашей лаборатории, что повышает лояльность и стимулирует повторные обращения.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="integration-features">
+                        <div class="feature-highlight">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Безопасность данных</h3>
+                            <p>Полное соответствие требованиям 152-ФЗ и ФЗ-323. Шифрование данных при передаче и хранении, журналирование всех действий, возможность полного удаления данных по требованию.</p>
+                        </div>
+                        
+                        <div class="feature-highlight">
+                            <i class="fas fa-plug"></i>
+                            <h3>Технические требования</h3>
+                            <p>Веб-интерфейс доступен с любого устройства. Не требует установки дополнительного программного обеспечения. Поддерживаются все современные браузеры.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="request" class="section request-section">
+            <div class="container">
+                <div class="request-card">
+                    <h2 class="section-title">Демонстрация возможностей для вашей практики</h2>
+                    <p class="section-subtitle">Мы подготовим персонализированную демонстрацию на основе типичных для вашей специализации случаев</p>
+                    
+                    <form id="demo-form" class="demo-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Имя и фамилия *</label>
+                                <input type="text" id="name" placeholder="Александр Петров" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="position">Должность *</label>
+                                <input type="text" id="position" placeholder="Врач-эндокринолог" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="institution">Учреждение *</label>
+                                <input type="text" id="institution" placeholder="Городская клиническая больница №1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Рабочая электронная почта *</label>
+                                <input type="email" id="email" placeholder="a.petrov@hospital.ru" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="specialization">Основная специализация *</label>
+                            <select id="specialization" required>
+                                <option value="" disabled selected>Выберите специализацию</option>
+                                <option value="endocrinology">Эндокринология</option>
+                                <option value="hematology">Гематология</option>
+                                <option value="nephrology">Нефрология</option>
+                                <option value="gastroenterology">Гастроэнтерология</option>
+                                <option value="cardiology">Кардиология</option>
+                                <option value="therapy">Терапия</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="scenario">Какой сценарий использования вас интересует? *</label>
+                            <select id="scenario" required>
+                                <option value="" disabled selected>Выберите сценарий</option>
+                                <option value="dynamics">Анализ динамики показателей у хронических пациентов</option>
+                                <option value="therapy">Оценка эффективности проводимой терапии</option>
+                                <option value="diagnostics">Дифференциальная диагностика на основе лабораторных данных</option>
+                                <option value="prevention">Раннее выявление отклонений при профилактических осмотрах</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="challenge">Опишите основную сложность в работе с лабораторными данными *</label>
+                            <textarea id="challenge" placeholder="Например: сложность сравнения анализов из разных лабораторий, трудоёмкость оценки динамики за длительный период, риск пропустить медленно прогрессирующие изменения..." rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary btn-large">Запросить демонстрацию</button>
+                            <p class="form-note">Мы подготовим демонстрацию с учётом вашей специализации и свяжемся в течение 24 часов для согласования времени.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <!-- Логотип убран из футера -->
+                    <h3 class="footer-title">Labmetrica</h3>
+                    <p class="footer-tagline">Инструмент для глубокого анализа лабораторных данных в клинической практике.</p>
+                    <p class="footer-legal">Labmetrica — система поддержки врачебных решений. Не является медицинским изделием. Окончательное клиническое решение принимает врач на основе комплексной оценки пациента.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Продукт</h4>
+                        <a href="#value">Ценность</a>
+                        <a href="#process">Процесс работы</a>
+                        <a href="#specialists">Для специалистов</a>
+                        <a href="#integration">Интеграция</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Компания</h4>
+                        <a href="#">О Labmetrica</a>
+                        <a href="#">Контакты</a>
+                        <a href="#">Партнёрская программа</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Документация</h4>
+                        <a href="#">Пользовательское соглашение</a>
+                        <a href="#">Политика конфиденциальности</a>
+                        <a href="#">Описание функционала</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Labmetrica. Все права защищены.</p>
+                <p>Для вопросов: <a href="mailto:info@labmetrica.ru">info@labmetrica.ru</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
