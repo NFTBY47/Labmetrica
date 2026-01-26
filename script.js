@@ -1,205 +1,136 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Мобильное меню
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const body = document.body;
-    const html = document.documentElement;
+    const heroNav = document.querySelector('.hero-nav');
+    const heroNavButtons = Array.from(document.querySelectorAll('.hero-nav-btn'));
+
+    // Reveal Animation with Intersection Observer
+    const revealElements = document.querySelectorAll('.reveal');
     
-    // Функция для открытия/закрытия меню
-    function toggleMenu() {
-        const isActive = navLinks.classList.toggle('active');
-        const icon = menuToggle.querySelector('i');
-        
-        if (isActive) {
-            // Меню открывается
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-            body.classList.add('menu-open');
-            html.classList.add('menu-open');
-            body.style.overflow = 'hidden';
-            html.style.overflow = 'hidden';
-        } else {
-            // Меню закрывается
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-            body.classList.remove('menu-open');
-            html.classList.remove('menu-open');
-            body.style.overflow = '';
-            html.style.overflow = '';
-        }
-    }
-    
-    // Функция для закрытия меню
-    function closeMenu() {
-        navLinks.classList.remove('active');
-        body.classList.remove('menu-open');
-        html.classList.remove('menu-open');
-        body.style.overflow = '';
-        html.style.overflow = '';
-        
-        if (menuToggle) {
-            const icon = menuToggle.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    }
-    
-    // Обработчик клика на бургер-меню
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleMenu();
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100);
+            }
         });
-    }
-    
-    // Закрыть меню при клике на ссылку
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            closeMenu();
-        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
     
-    // Закрыть меню при клике вне его
-    document.addEventListener('click', function(event) {
-        if (!navLinks || !menuToggle) return;
-        
-        const isClickInsideNav = navLinks.contains(event.target);
-        const isClickOnToggle = menuToggle.contains(event.target);
-        
-        if (!isClickInsideNav && !isClickOnToggle && navLinks.classList.contains('active')) {
-            closeMenu();
-        }
-    });
+    revealElements.forEach(el => revealObserver.observe(el));
     
-    // Закрыть меню при нажатии Escape
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && navLinks.classList.contains('active')) {
-            closeMenu();
-        }
-    });
-    
-    // FAQ аккордеон
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-            // Закрываем все остальные элементы
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
+    // Smooth Scroll for All Internal Links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.length > 1) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const navHeight = heroNav?.offsetHeight || 0;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 40;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
                 }
+            }
+        });
+    });
+
+    // Hero Nav Active State (Lab / Doctor / Patient)
+    const navTargets = [
+        { id: 'lab-intro', btn: 'a[href="#lab-intro"]' },
+        { id: 'lab-doc-link', btn: 'a[href="#lab-doc-link"]' },
+        { id: 'lab-pat-link', btn: 'a[href="#lab-pat-link"]' }
+    ];
+
+    const heroNavTargets = navTargets.map(t => document.getElementById(t.id)).filter(Boolean);
+
+    const setHeroNavActive = (id) => {
+        heroNavButtons.forEach(btn => {
+            const href = btn.getAttribute('href');
+            btn.classList.toggle('active', href === `#${id}`);
+        });
+    };
+
+    // Hero Nav Transparency Control
+    const heroSection = document.querySelector('.hero');
+    
+    const updateHeroNavStyle = (isInHero) => {
+        if (isInHero) {
+            heroNav.style.background = 'rgba(255, 255, 255, 0.9)';
+            heroNav.style.backdropFilter = 'blur(20px) saturate(180%)';
+            heroNav.style.webkitBackdropFilter = 'blur(20px) saturate(180%)';
+            heroNav.style.border = '1px solid rgba(37, 99, 235, 0.12)';
+        } else {
+            heroNav.style.background = 'rgba(255, 255, 255, 0.95)';
+            heroNav.style.backdropFilter = 'blur(16px) saturate(120%)';
+            heroNav.style.webkitBackdropFilter = 'blur(16px) saturate(120%)';
+            heroNav.style.border = '1px solid rgba(37, 99, 235, 0.15)';
+        }
+    };
+
+    if (heroNavTargets.length && heroNavButtons.length) {
+        const heroNavObserver = new IntersectionObserver((entries) => {
+            // Find the most visible entry
+            const visible = entries
+                .filter(e => e.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+            if (visible[0]?.target?.id) {
+                setHeroNavActive(visible[0].target.id);
+            }
+        }, { 
+            threshold: [0.1, 0.3, 0.5],
+            rootMargin: '-20% 0px -60% 0px'
+        });
+
+        heroNavTargets.forEach(el => heroNavObserver.observe(el));
+
+        // Hero section observer for transparency
+        if (heroSection) {
+            const heroObserver = new IntersectionObserver((entries) => {
+                const isHeroVisible = entries[0].isIntersecting && entries[0].intersectionRatio > 0.1;
+                updateHeroNavStyle(isHeroVisible);
+            }, {
+                threshold: [0.1, 0]
             });
             
-            // Переключаем текущий элемент
-            item.classList.toggle('active');
-        });
-    });
+            heroObserver.observe(heroSection);
+        }
+    }
     
-    // Форма демонстрации
+    // Form Handler
     const demoForm = document.getElementById('demo-form');
     
     if (demoForm) {
         demoForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const formData = {
-                name: document.getElementById('name').value,
-                position: document.getElementById('position').value,
-                institution: document.getElementById('institution').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value || 'Не указан',
-                employees: document.getElementById('employees').value || 'Не указано',
-                specialization: document.getElementById('specialization').value,
-                scenario: document.getElementById('scenario').value,
-                challenge: document.getElementById('challenge').value
-            };
+            const btn = demoForm.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
             
-            // Форматируем сообщение
-            const message = `Запрос на демонстрацию для лаборатории отправлен!\n\n` +
-                           `Спасибо, ${formData.name} (${formData.position}).\n` +
-                           `Лаборатория: ${formData.institution}\n` +
-                           `Сотрудников: ${formData.employees}\n` +
-                           `Специализация: ${formData.specialization}\n` +
-                           `Цель: ${formData.scenario}\n\n` +
-                           `Наш менеджер свяжется с вами на ${formData.email} ` +
-                           `(тел: ${formData.phone}) в течение 24 часов для согласования времени демонстрации.`;
+            btn.disabled = true;
+            btn.textContent = 'Отправка...';
+            btn.style.opacity = '0.7';
             
-            alert(message);
-            
-            // Сброс формы
-            demoForm.reset();
-            
-            // Плавный скролл к верху
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-    
-    // Плавный скролл для якорных ссылок
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            e.preventDefault();
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                // Закрываем меню если оно открыто
-                closeMenu();
+            setTimeout(() => {
+                const formData = new FormData(demoForm);
+                console.log('Form submitted:', Object.fromEntries(formData));
                 
-                // Небольшая задержка для полного закрытия меню
+                btn.textContent = 'Отправлено ✓';
+                btn.style.background = '#10B981';
+                
                 setTimeout(() => {
-                    // Плавный скролл
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }, 300);
-            }
-        });
-    });
-    
-    // Закрыть меню при изменении размера окна (если перешли на десктоп)
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
-            closeMenu();
-        }
-    });
-    
-    // Предотвращаем скролл за меню при открытом меню
-    navLinks.addEventListener('wheel', function(e) {
-        if (navLinks.classList.contains('active')) {
-            e.stopPropagation();
-        }
-    });
-    
-    // Анимация при скролле
-    function animateOnScroll() {
-        const elements = document.querySelectorAll('.benefit-card, .faq-item, .feature-highlight');
-        
-        elements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if (elementTop < windowHeight - 100) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
+                    demoForm.reset();
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    btn.style.background = '';
+                }, 2000);
+            }, 1000);
         });
     }
-    
-    // Инициализация анимации
-    document.querySelectorAll('.benefit-card, .faq-item, .feature-highlight').forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    });
-    
-    window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Запускаем сразу для видимых элементов
 });
