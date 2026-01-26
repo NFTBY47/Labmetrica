@@ -3,51 +3,416 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labmetrica | Анализ лабораторной динамики для врачей и лабораторий</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Labmetrica | IT-инфраструктура для современных лабораторий</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
-                    <img src="images/logo-hero.png" alt="Labmetrica" class="logo-img">
-                </a>
-                <div class="nav-links">
-                    <a href="#value">Ценность</a>
-                    <a href="#process">Процесс работы</a>
-                    <a href="#specialists">Для специалистов</a>
-                    <a href="#integration">Интеграция</a>
-                    <a href="#faq">Вопросы</a>
-                    <a href="#request" class="nav-button">Демо-доступ</a>
-                </div>
-                <button class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-        </div>
-    </header>
-
+<body class="dark-mode">
     <main>
-        <section class="hero">
+        <!-- Левитирующая навигация -->
+        <nav class="hero-nav" aria-label="Разделы">
+            <a class="hero-nav-btn" href="#lab-intro">Лаборатория</a>
+            <a class="hero-nav-btn" href="#lab-doc-link">Врач</a>
+            <a class="hero-nav-btn" href="#lab-pat-link">Пациент</a>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero hero--dark">
+            <div class="hero-background" aria-hidden="true">
+                <div class="hero-orb hero-orb-1"></div>
+                <div class="hero-orb hero-orb-2"></div>
+                <div class="hero-orb hero-orb-3"></div>
+            </div>
             <div class="container">
-                <div class="hero-grid">
-                    <div class="hero-text">
-                        <h1 class="hero-title">Labmetrica — конкурентное преимущество для вашей лаборатории</h1>
-                        <p class="hero-description">Превращайте стандартные результаты анализов в уникальную ценность для врачей. Labmetrica — это интеллектуальный аналитический сервис, который помогает лабораториям укреплять партнёрские отношения с врачами через глубокую аналитику лабораторных данных.</p>
-                        <div class="hero-buttons">
-                            <a href="#request" class="btn btn-primary">Запросить демонстрацию</a>
-                            <a href="#value" class="btn btn-outline">Узнать подробнее</a>
+                <div class="hero-ref">
+                    <h1 class="hero-title">IT-инфраструктура уровня гигантов для вашей лаборатории</h1>
+                    <p class="hero-subtitle">Помогаем малым и средним лабораториям конкурировать с лидерами рынка. Мы создаем ваш собственный цифровой контур: личные кабинеты врачей и пациентов, автоматическую интерпретацию результатов и централизованное управление данными.</p>
+
+                    <div class="hero-actions">
+                        <a href="#demo" class="btn btn-primary">Запросить пилотный проект</a>
+                        <a href="#lab-intro" class="btn btn-ghost">Почему мы?</a>
+                    </div>
+
+                    <div class="hero-trust">
+                        <p class="hero-trust-text">Labmetrica — когда важна каждая деталь</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Почему Labmetrica (для лаборатории) -->
+        <section id="lab-intro" class="section section-why">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Почему Labmetrica</span>
+                    <h2 class="section-title">Технологии, которые работают на вас</h2>
+                    <p class="section-subtitle">Современная IT-инфраструктура для лабораторий любого масштаба</p>
+                </div>
+                
+                <div class="why-grid">
+                    <!-- Card 1: Нулевой цикл интеграции -->
+                    <article class="why-card reveal">
+                        <div class="why-card-header">
+                            <h3 class="why-card-title"><strong>Нулевой цикл интеграции.</strong> Для работы Labmetrica не нужно внедряться в ваш программный контур или ЛИС. Мы работаем с конечными данными, которые лаборатория уже генерирует.</h3>
+                        </div>
+                        <div class="why-card-visual">
+                            <div class="zero-integration-grid">
+                                <div class="zero-integration-item">
+                                    <div class="zero-integration-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                    </div>
+                                    <div class="zero-integration-content">
+                                        <div class="zero-integration-label">Сложность</div>
+                                        <div class="zero-integration-value">0%</div>
+                                        <div class="zero-integration-desc">No-code решение</div>
+                                    </div>
+                                </div>
+                                <div class="zero-integration-item">
+                                    <div class="zero-integration-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    </div>
+                                    <div class="zero-integration-content">
+                                        <div class="zero-integration-label">Запуск</div>
+                                        <div class="zero-integration-value">В день обращения</div>
+                                        <div class="zero-integration-desc">Мгновенный старт</div>
+                                    </div>
+                                </div>
+                                <div class="zero-integration-item">
+                                    <div class="zero-integration-icon">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    </div>
+                                    <div class="zero-integration-content">
+                                        <div class="zero-integration-label">Риски</div>
+                                        <div class="zero-integration-value">Отсутствуют</div>
+                                        <div class="zero-integration-desc">Не влияет на стабильность ЛИС</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2: Аналитика в реальном времени -->
+                    <article class="why-card reveal">
+                        <div class="why-card-header">
+                            <h3 class="why-card-title"><strong>Аналитика в реальном времени.</strong> Полный контроль над процессами лаборатории.</h3>
+                        </div>
+                        <div class="why-card-visual">
+                            <div class="analytics-bento">
+                                <div class="analytics-micro-card">
+                                    <div class="analytics-micro-header">
+                                        <span class="analytics-micro-label">Глубина анализа</span>
+                                        <span class="analytics-micro-value">100%</span>
+                                    </div>
+                                    <div class="analytics-micro-chart">
+                                        <svg width="100%" height="40" viewBox="0 0 100 40" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="depthGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:rgba(37, 99, 235, 0.3);stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:rgba(37, 99, 235, 0);stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,35 L20,30 L40,32 L60,28 L80,30 L100,25 L100,40 L0,40 Z" fill="url(#depthGradient)"/>
+                                            <path d="M0,35 L20,30 L40,32 L60,28 L80,30 L100,25" stroke="#2563EB" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </div>
+                                    <p class="analytics-micro-desc">Обрабатываем каждый показатель, не упуская мелочей</p>
+                                </div>
+
+                                <div class="analytics-micro-card">
+                                    <div class="analytics-micro-header">
+                                        <span class="analytics-micro-label">Точность сопоставления</span>
+                                        <span class="analytics-micro-value">100%</span>
+                                    </div>
+                                    <div class="analytics-micro-chart">
+                                        <svg width="100%" height="40" viewBox="0 0 100 40" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="accuracyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:rgba(34, 197, 94, 0.3);stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:rgba(34, 197, 94, 0);stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,30 L25,25 L50,20 L75,18 L100,15 L100,40 L0,40 Z" fill="url(#accuracyGradient)"/>
+                                            <path d="M0,30 L25,25 L50,20 L75,18 L100,15" stroke="#22C55E" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </div>
+                                    <p class="analytics-micro-desc">Связываем данные разных лет и референсов</p>
+                                </div>
+
+                                <div class="analytics-micro-card">
+                                    <div class="analytics-micro-header">
+                                        <span class="analytics-micro-label">Мгновенная интерпретация</span>
+                                        <span class="analytics-micro-value">< 1 сек</span>
+                                    </div>
+                                    <div class="analytics-micro-chart">
+                                        <svg width="100%" height="40" viewBox="0 0 100 40" preserveAspectRatio="none">
+                                            <defs>
+                                                <linearGradient id="speedGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:rgba(59, 130, 246, 0.3);stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:rgba(59, 130, 246, 0);stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path d="M0,38 L15,35 L30,28 L45,22 L60,18 L75,12 L90,8 L100,5 L100,40 L0,40 Z" fill="url(#speedGradient)"/>
+                                            <path d="M0,38 L15,35 L30,28 L45,22 L60,18 L75,12 L90,8 L100,5" stroke="#3B82F6" stroke-width="2" fill="none"/>
+                                        </svg>
+                                    </div>
+                                    <p class="analytics-micro-desc">Врач получает готовый тренд сразу после загрузки PDF</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3: Безопасность данных -->
+                    <article class="why-card reveal">
+                        <div class="why-card-header">
+                            <h3 class="why-card-title"><strong>Безопасность данных.</strong> Полное соответствие ФЗ-152 и медицинским стандартам.</h3>
+                        </div>
+                        <div class="why-card-visual">
+                            <div class="security-grid">
+                                <div class="security-item">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    <span>Шифрование</span>
+                                </div>
+                                <div class="security-item">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                    <span>Контроль доступа</span>
+                                </div>
+                                <div class="security-item">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                    <span>Аудит</span>
+                                </div>
+                                <div class="security-item">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                                    <span>Резервирование</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4: Масштабирование -->
+                    <article class="why-card reveal">
+                        <div class="why-card-header">
+                            <h3 class="why-card-title"><strong>Растем вместе с вами.</strong> От 100 до 100 000 анализов в месяц без ограничений.</h3>
+                        </div>
+                        <div class="why-card-visual">
+                            <div class="growth-chart">
+                                <svg width="100%" height="120" viewBox="0 0 300 120" preserveAspectRatio="none">
+                                    <defs>
+                                        <linearGradient id="growthGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" style="stop-color:rgba(37, 99, 235, 0.3);stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:rgba(37, 99, 235, 0);stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M0,100 L50,85 L100,70 L150,50 L200,35 L250,20 L300,10 L300,120 L0,120 Z" fill="url(#growthGradient)"/>
+                                    <path d="M0,100 L50,85 L100,70 L150,50 L200,35 L250,20 L300,10" stroke="rgba(37, 99, 235, 0.8)" stroke-width="2" fill="none"/>
+                                    <circle cx="50" cy="85" r="3" fill="#2563EB"/>
+                                    <circle cx="150" cy="50" r="3" fill="#2563EB"/>
+                                    <circle cx="250" cy="20" r="3" fill="#2563EB"/>
+                                </svg>
+                            </div>
+                            <div class="growth-labels">
+                                <span>100</span>
+                                <span>1K</span>
+                                <span>10K</span>
+                                <span>100K</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Преимущества для бизнеса лаборатории -->
+        <section class="section section--alt section-benefits-bento12">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Преимущества</span>
+                    <h2 class="section-title">Ценность для бизнеса лаборатории</h2>
+                    <p class="section-subtitle">Трансформация из поставщика услуг в технологического партнера</p>
+                </div>
+
+                <div class="bento-grid">
+                    <article class="bento-item bento-item--half reveal">
+                        <div class="bento-visual" aria-hidden="true">
+                            <svg class="bento-linechart" viewBox="0 0 360 120" fill="none">
+                                <path d="M20 92 C 60 70, 92 82, 128 58 C 160 38, 206 46, 236 34 C 270 20, 306 30, 340 18" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M20 92 C 60 70, 92 82, 128 58 C 160 38, 206 46, 236 34 C 270 20, 306 30, 340 18" stroke="rgba(37,99,235,0.18)" stroke-width="8" stroke-linecap="round"/>
+                                <circle cx="128" cy="58" r="3" fill="#2563EB"/>
+                                <circle cx="236" cy="34" r="3" fill="#2563EB"/>
+                                <circle cx="340" cy="18" r="3" fill="#2563EB"/>
+                            </svg>
+                        </div>
+                        <h3 class="bento-title">Формирование врачебного пула</h3>
+                        <p class="bento-text">Ваша лаборатория становится незаменимым инструментом для клинициста. Интерактивные тренды и история болезни пациента привязывают специалиста к вашему сервису на уровне ежедневной практики.</p>
+                    </article>
+
+                    <article class="bento-item bento-item--half reveal">
+                        <div class="bento-visual" aria-hidden="true">
+                            <div class="bento-table">
+                                <div class="bento-table-row bento-table-head">
+                                    <span>Результат</span>
+                                    <span>Референс</span>
+                                </div>
+                                <div class="bento-table-row">
+                                    <span>Глюкоза</span>
+                                    <span>3.9–5.5</span>
+                                </div>
+                                <div class="bento-table-row">
+                                    <span>Ферритин</span>
+                                    <span>15–150</span>
+                                </div>
+                                <div class="bento-table-row">
+                                    <span>ТТГ</span>
+                                    <span>0.4–4.0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="bento-title">Цифровое доминирование (White Label)</h3>
+                        <p class="bento-text">Платформа полностью интегрируется в ваш бренд. Врачи и пациенты видят современную цифровую экосистему, что кратно повышает экспертный статус лаборатории на рынке.</p>
+                    </article>
+
+                    <article class="bento-item bento-item--half reveal">
+                        <div class="bento-visual" aria-hidden="true">
+                            <div class="bento-risk-min" aria-hidden="true">
+                                <div class="bento-risk-min-pill">
+                                    <span class="bento-risk-min-dot"></span>
+                                    <span class="bento-risk-min-label">Точность сопоставления</span>
+                                    <span class="bento-risk-min-value">100%</span>
+                                </div>
+
+                                <div class="bento-risk-min-kpis">
+                                    <div class="bento-risk-min-kpi">
+                                        <span class="bento-risk-min-k">История</span>
+                                        <span class="bento-risk-min-v">с 2019</span>
+                                    </div>
+                                    <div class="bento-risk-min-kpi">
+                                        <span class="bento-risk-min-k">Референсы</span>
+                                        <span class="bento-risk-min-v">учтены</span>
+                                    </div>
+                                    <div class="bento-risk-min-kpi">
+                                        <span class="bento-risk-min-k">Сопоставление</span>
+                                        <span class="bento-risk-min-v">авто</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="bento-title">Минимизация диагностических рисков</h3>
+                        <p class="bento-text">Автоматическое сопоставление данных и выделение патологий снимает рутинную нагрузку с лаборатории и исключает человеческий фактор при интерпретации сложных кейсов.</p>
+                    </article>
+
+                    <article class="bento-item bento-item--half reveal">
+                        <div class="bento-visual" aria-hidden="true">
+                            <div class="bento-datastack">
+                                <div class="bento-chip">Структура</div>
+                                <div class="bento-chip">Нормы</div>
+                                <div class="bento-chip">Динамика</div>
+                                <div class="bento-chip">Поиск</div>
+                                <div class="bento-chip">Отчеты</div>
+                            </div>
+                        </div>
+                        <h3 class="bento-title">Актив в виде данных</h3>
+                        <p class="bento-text">Вы переходите от выдачи бумажных бланков к владению структурированной базой данных, готовой к мгновенному клиническому анализу.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Связка Лаборатория — Врач -->
+        <section id="lab-doc-link" class="section section--dark section-lab-doc">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Экосистема</span>
+                    <h2 class="section-title">Лаборатория ↔ Врач</h2>
+                    <p class="section-subtitle">Прямой канал связи: от загрузки результата в лаборатории до мгновенного анализа врачом.</p>
+                </div>
+
+                <div class="doc-bridge">
+                    <div class="doc-bridge-left">
+                        <div class="doc-step reveal">
+                            <div class="doc-step-head">
+                                <span class="doc-step-tag">Процесс</span>
+                                <h3 class="doc-step-title">Личный кабинет специалиста</h3>
+                            </div>
+                            <p class="doc-step-text">Лаборатория загружает данные — врач мгновенно видит их в структурированном виде. Система автоматически сопоставляет новые результаты с историей пациента.</p>
+                            <div class="doc-step-bullets" aria-hidden="true">
+                                <div class="doc-bullet"><span class="doc-bullet-dot"></span><span class="doc-bullet-text">Загрузка результата</span></div>
+                                <div class="doc-bullet"><span class="doc-bullet-dot"></span><span class="doc-bullet-text">Структурирование данных</span></div>
+                                <div class="doc-bullet"><span class="doc-bullet-dot"></span><span class="doc-bullet-text">Сопоставление с историей</span></div>
+                            </div>
+                        </div>
+
+                        <div class="doc-step reveal">
+                            <div class="doc-step-head">
+                                <span class="doc-step-tag">Результат</span>
+                                <h3 class="doc-step-title">Эффективность выдачи</h3>
+                            </div>
+                            <div class="doc-metrics">
+                                <div class="doc-metric">
+                                    <div class="doc-metric-v">0 сек</div>
+                                    <div class="doc-metric-k">Задержка доставки</div>
+                                </div>
+                                <div class="doc-metric">
+                                    <div class="doc-metric-v">100%</div>
+                                    <div class="doc-metric-k">Сохранность данных</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="hero-image">
-                        <div class="image-wrapper">
-                            <img src="images/main.jpeg" alt="Labmetrica — структурирование медицинских данных" class="hero-visual">
-                            <div class="image-overlay">
-                                <i class="fas fa-puzzle-piece"></i>
-                                <p>Каждый анализ — часть общей картины здоровья</p>
+
+                    <div class="doc-bridge-right reveal" aria-hidden="true">
+                        <div class="doc-mock">
+                            <div class="doc-mock-topbar">
+                                <span class="doc-dot"></span><span class="doc-dot"></span><span class="doc-dot"></span>
+                                <div class="doc-mock-title">Кабинет врача</div>
+                            </div>
+
+                            <div class="doc-mock-body">
+                                <div class="doc-mock-sidebar">
+                                    <div class="doc-chip doc-chip--active">Пациент</div>
+                                    <div class="doc-chip">Динамика</div>
+                                    <div class="doc-chip">Референсы</div>
+                                    <div class="doc-chip">Отчет</div>
+                                </div>
+
+                                <div class="doc-mock-main">
+                                    <div class="doc-patient">
+                                        <div class="doc-avatar"></div>
+                                        <div class="doc-patient-meta">
+                                            <div class="doc-patient-name">Пациент №124</div>
+                                            <div class="doc-patient-sub">История наблюдений: 2019–2026</div>
+                                        </div>
+                                        <div class="doc-pill">сопоставлено</div>
+                                    </div>
+
+                                    <div class="doc-grid">
+                                        <div class="doc-kpi">
+                                            <div class="doc-kpi-k">CRP</div>
+                                            <div class="doc-kpi-v">12.4</div>
+                                            <div class="doc-kpi-sub">0–5</div>
+                                        </div>
+                                        <div class="doc-kpi">
+                                            <div class="doc-kpi-k">ТТГ</div>
+                                            <div class="doc-kpi-v">2.1</div>
+                                            <div class="doc-kpi-sub">0.4–4.0</div>
+                                        </div>
+                                        <div class="doc-kpi">
+                                            <div class="doc-kpi-k">Ферритин</div>
+                                            <div class="doc-kpi-v">46</div>
+                                            <div class="doc-kpi-sub">15–150</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="doc-trend">
+                                        <div class="doc-trend-head">
+                                            <div class="doc-trend-title">Тренд маркера</div>
+                                            <div class="doc-trend-badge">патология</div>
+                                        </div>
+                                        <svg class="doc-trend-chart" viewBox="0 0 420 120" fill="none">
+                                            <path d="M10 86 C 52 82, 78 92, 118 76 C 160 58, 206 66, 244 48 C 286 28, 326 40, 370 18" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"/>
+                                            <path d="M10 86 C 52 82, 78 92, 118 76 C 160 58, 206 66, 244 48 C 286 28, 326 40, 370 18" stroke="rgba(37,99,235,0.16)" stroke-width="10" stroke-linecap="round"/>
+                                            <circle cx="244" cy="48" r="5" fill="#F97316" stroke="#FFFFFF" stroke-width="2"/>
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -55,384 +420,311 @@
             </div>
         </section>
 
-        <section id="value" class="section value-section">
+        <!-- 4. Плюсы для врача -->
+        <section id="doc-intro" class="section section-doc-benefits">
             <div class="container">
-                <h2 class="section-title">Как Labmetrica меняет работу лабораторий</h2>
-                <div class="value-content">
-                    <div class="value-text">
-                        <p>В конкурентной борьбе за лояльность врачей-партнёров ключевое значение имеет не просто скорость выдачи результатов, а их ценность. Labmetrica даёт вашей лаборатории технологическое преимущество: мы превращаем поток цифр в наглядную аналитику, которая экономит время врача и повышает его приверженность именно вашему бренду.</p>
-                        
-                        <p>Система не просто хранит анализы — она <strong>интеллигентно их обрабатывает</strong>:</p>
-                        
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Автоматически определяет тип исследования и нормативные значения</li>
-                            <li><i class="fas fa-check-circle"></i> Сопоставляет одноимённые показатели из разных лабораторий</li>
-                            <li><i class="fas fa-check-circle"></i> Строит индивидуальные референсные коридоры с учётом пола и возраста</li>
-                            <li><i class="fas fa-check-circle"></i> Выделяет статистически значимые изменения, даже в пределах нормы</li>
-                        </ul>
-                        
-                        <p>Вы предоставляете врачам не набор цифр, а <strong>готовый аналитический отчёт</strong>, который становится дополнительной ценностью вашего сервиса.</p>
+                <div class="section-header">
+                    <span class="section-label">Для врача</span>
+                    <h2 class="section-title">Клинический контроль и аналитика</h2>
+                </div>
+                <div class="doc-benefits-layout">
+                    <div class="doc-benefits-left">
+                        <div class="doc-benefits-steps">
+                            <div class="doc-benefit-step reveal">
+                                <div class="doc-benefit-step-marker" aria-hidden="true"></div>
+                                <div class="doc-benefit-step-content">
+                                    <h3 class="doc-benefit-step-title">Тренды маркеров</h3>
+                                    <p class="doc-benefit-step-text">Врач видит динамику каждого показателя за годы наблюдений. Наглядные графики позволяют быстрее увидеть аномалии.</p>
+                                </div>
+                            </div>
+
+                            <div class="doc-benefit-step reveal">
+                                <div class="doc-benefit-step-marker" aria-hidden="true"></div>
+                                <div class="doc-benefit-step-content">
+                                    <h3 class="doc-benefit-step-title">Умные подсказки</h3>
+                                    <p class="doc-benefit-step-text">Система подсвечивает критические отклонения и дает алгоритмические интерпретации на основе клинических данных.</p>
+                                </div>
+                            </div>
+
+                            <div class="doc-benefit-step reveal">
+                                <div class="doc-benefit-step-marker" aria-hidden="true"></div>
+                                <div class="doc-benefit-step-content">
+                                    <h3 class="doc-benefit-step-title">Единый профиль</h3>
+                                    <p class="doc-benefit-step-text">Вся медицинская история пациента собрана в одном месте — больше никаких поисков в PDF-файлах.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="value-visual">
-                        <div class="visual-card">
-                            <h3><i class="fas fa-brain"></i> Интеллектуальная обработка данных</h3>
-                            <p>Система использует алгоритмы машинного обучения, специально обученные на медицинских текстах, для точного распознавания даже нестандартных форматов лабораторных бланков.</p>
+
+                    <div class="doc-benefits-right reveal" aria-hidden="true">
+                        <div class="doc-workflow">
+                            <div class="doc-workflow-grid">
+                                <div class="doc-flow-card doc-flow-card--a">
+                                    <div class="doc-flow-card-k">PDF</div>
+                                    <div class="doc-flow-card-v">Результат анализа</div>
+                                </div>
+                                <div class="doc-flow-card doc-flow-card--b">
+                                    <div class="doc-flow-card-k">Профиль</div>
+                                    <div class="doc-flow-card-v">История пациента</div>
+                                </div>
+                                <div class="doc-flow-card doc-flow-card--c">
+                                    <div class="doc-flow-card-k">Тренд</div>
+                                    <div class="doc-flow-card-v">Динамика маркеров</div>
+                                </div>
+                                <div class="doc-flow-card doc-flow-card--d">
+                                    <div class="doc-flow-card-k">Сигнал</div>
+                                    <div class="doc-flow-card-v">Критические отклонения</div>
+                                </div>
+                            </div>
+
+                            <div class="doc-workflow-center">
+                                <div class="doc-workflow-node">
+                                    <div class="doc-workflow-node-dot" aria-hidden="true"></div>
+                                    <div class="doc-workflow-node-text">Формирование
+                                        отчета</div>
+                                </div>
+                                <div class="doc-workflow-preview">
+                                    <div class="doc-preview-head">
+                                        <div class="doc-preview-title">Кабинет врача</div>
+                                        <div class="doc-preview-pill">готово</div>
+                                    </div>
+                                    <div class="doc-preview-chart" aria-hidden="true">
+                                        <span class="doc-preview-line"></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="process" class="section process-section alt-bg">
+        <!-- 5. Связка Лаборатория — Пациент -->
+        <section id="lab-pat-link" class="section section--dark section-lab-pat">
             <div class="container">
-                <h2 class="section-title">Детальный процесс работы с данными</h2>
-                
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-header">
-                            <div class="step-icon">
-                                <i class="fas fa-file-upload"></i>
+                <div class="section-header">
+                    <span class="section-label">Экосистема</span>
+                    <h2 class="section-title">Лаборатория ↔ Пациент</h2>
+                    <p class="section-subtitle">Ваш бренд становится партнером пациента в управлении его здоровьем.</p>
+                </div>
+                <div class="pat-flow">
+                    <div class="pat-flow-left">
+                        <article class="pat-flow-item reveal">
+                            <div class="pat-flow-item-head">
+                                <div class="pat-flow-item-dot" aria-hidden="true"></div>
+                                <h3 class="pat-flow-item-title">Доставка в один клик</h3>
                             </div>
-                            <h3>1. Загрузка и распознавание</h3>
-                        </div>
-                        <div class="step-content">
-                            <p>Система принимает PDF, JPG или PNG файлы из любых источников:</p>
-                            <ul>
-                                <li>Прямая загрузка из личных кабинетов лабораторий (Инвитро, Гемотест, KDL, Ситилаб)</li>
-                                <li>Скан бумажных бланков, включая рукописные пометки</li>
-                                <li>Экспорт из медицинских информационных систем</li>
-                            </ul>
-                            <p class="step-note"><i class="fas fa-info-circle"></i> Алгоритмы оптического распознавания (OCR) адаптированы под специфику медицинских документов и сохраняют контекстную информацию.</p>
-                        </div>
+                            <p class="pat-flow-item-text">Результаты попадают в личный кабинет пациента сразу после готовности. Удобный доступ со смартфона.</p>
+                        </article>
+
+                        <article class="pat-flow-item reveal">
+                            <div class="pat-flow-item-head">
+                                <div class="pat-flow-item-dot" aria-hidden="true"></div>
+                                <h3 class="pat-flow-item-title">Понятная динамика</h3>
+                            </div>
+                            <p class="pat-flow-item-text">Пациент видит наглядные графики своих анализов, что повышает вовлеченность и доверие к лаборатории.</p>
+                        </article>
+
+                        <article class="pat-flow-item reveal">
+                            <div class="pat-flow-item-head">
+                                <div class="pat-flow-item-dot" aria-hidden="true"></div>
+                                <h3 class="pat-flow-item-title">Семейный доступ</h3>
+                            </div>
+                            <p class="pat-flow-item-text">Возможность вести профили всей семьи в одном аккаунте под вашим брендом.</p>
+                        </article>
                     </div>
-                    
-                    <div class="process-step">
-                        <div class="step-header">
-                            <div class="step-icon">
-                                <i class="fas fa-project-diagram"></i>
+
+                    <div class="pat-flow-viz reveal" aria-hidden="true">
+                        <div class="pat-vflow">
+                            <div class="pat-vflow-item">
+                                <div class="pat-vflow-block">
+                                    <div class="pat-vflow-title">Лаборатория</div>
+                                    <div class="pat-vflow-sub">Загрузка результата</div>
+                                </div>
                             </div>
-                            <h3>2. Структурирование и нормализация</h3>
-                        </div>
-                        <div class="step-content">
-                            <p>Извлечённые данные проходят многоуровневую обработку:</p>
-                            <ul>
-                                <li><strong>Идентификация показателя</strong> — система определяет, какой именно параметр был измерен, даже при разных названиях в разных лабораториях</li>
-                                <li><strong>Стандартизация единиц измерения</strong> — автоматический пересчёт в общепринятые единицы для корректного сравнения</li>
-                                <li><strong>Привязка к референсным значениям</strong> — с учётом пола, возраста и методологии исследования</li>
-                                <li><strong>Валидация данных</strong> — проверка на ошибки измерения и технические артефакты</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="process-step">
-                        <div class="step-header">
-                            <div class="step-icon">
-                                <i class="fas fa-chart-line"></i>
+
+                            <div class="pat-vflow-arrow" aria-hidden="true"></div>
+
+                            <div class="pat-vflow-item">
+                                <div class="pat-vflow-block">
+                                    <div class="pat-vflow-title">Платформа</div>
+                                    <div class="pat-vflow-sub">Структурирование</div>
+                                </div>
                             </div>
-                            <h3>3. Анализ и визуализация</h3>
-                        </div>
-                        <div class="step-content">
-                            <p>Подготовленные данные становятся основой для клинического анализа:</p>
-                            <ul>
-                                <li><strong>Динамические графики</strong> — изменение каждого показателя во времени с выделением значимых трендов</li>
-                                <li><strong>Корреляционный анализ</strong> — выявление взаимосвязей между различными параметрами</li>
-                                <li><strong>Автоматические уведомления</strong> — система выделяет показатели, требующие особого внимания врача</li>
-                                <li><strong>Экспорт отчётов</strong> — возможность включить графики и анализ в медицинскую документацию</li>
-                            </ul>
-                            <p class="step-note"><i class="fas fa-lightbulb"></i> Врач видит не просто цифры, а закономерности, которые могут указывать на ранние стадии заболеваний или эффективность терапии.</p>
+
+                            <div class="pat-vflow-arrow" aria-hidden="true"></div>
+
+                            <div class="pat-vflow-item">
+                                <div class="pat-vflow-block">
+                                    <div class="pat-vflow-title">Пациент</div>
+                                    <div class="pat-vflow-sub">Личный кабинет</div>
+                                </div>
+                            </div>
+
+                            <div class="pat-vflow-arrow" aria-hidden="true"></div>
+
+                            <div class="pat-vflow-item">
+                                <div class="pat-vflow-block">
+                                    <div class="pat-vflow-title">Семья</div>
+                                    <div class="pat-vflow-sub">Единый доступ</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="specialists" class="section specialists-section">
+        <!-- 6. Что будет у пациента (плюсы пациента) -->
+        <section id="pat-intro" class="section section--alt section-pat-benefits">
             <div class="container">
-                <h2 class="section-title">Специализированные решения для различных областей медицины</h2>
-                <p class="section-subtitle" style="text-align: center; margin-bottom: 3rem;">Предоставляйте врачам-специалистам углублённую аналитику, которая соответствует их клиническим задачам. Это выделит ваш сервис среди конкурентов.</p>
-                
-                <div class="specialists-content">
-                    <div class="specialty-detail">
-                        <h3><i class="fas fa-seedling"></i> Эндокринология</h3>
-                        <p>Для эндокринологов критически важна динамика гормональных показателей. Labmetrica предоставляет специализированные панели для:</p>
-                        <ul>
-                            <li><strong>Контроля диабета</strong> — совместный анализ HbA1c, глюкозы крови, фруктозамина с построением индивидуальных целевых диапазонов</li>
-                            <li><strong>Мониторинга функции щитовидной железы</strong> — трекинг ТТГ, свободного T3/T4, антител с учётом фармакотерапии</li>
-                            <li><strong>Оценки метаболического статуса</strong> — комплексный анализ липидного профиля, инсулина, лептина и адипокинов</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="specialty-detail">
-                        <h3><i class="fas fa-tint"></i> Гематология</h3>
-                        <p>В гематологии важны не только абсолютные значения, но и сдвиги в клеточном составе. Система обеспечивает:</p>
-                        <ul>
-                            <li><strong>Детализированный анализ гемограммы</strong> — раздельный трекинг всех фракций лейкоцитов, эритроцитарных индексов, тромбоцитов</li>
-                            <li><strong>Визуализация динамики миелограммы</strong> — при последовательных исследованиях костного мозга</li>
-                            <li><strong>Контроль коагулограммы</strong> — мониторинг параметров свёртываемости у пациентов на антикоагулянтной терапии</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="specialty-detail">
-                        <h3><i class="fas fa-filter"></i> Нефрология</h3>
-                        <p>Для нефрологов ключевое значение имеет скорость изменения почечных показателей. Labmetrica предлагает:</p>
-                        <ul>
-                            <li><strong>Расчёт и визуализацию СКФ</strong> — автоматический расчёт скорости клубочковой фильтрации по разным формулам (CKD-EPI, MDRD) с построением кривой прогрессирования</li>
-                            <li><strong>Баланс электролитов</strong> — мониторинг натрия, калия, кальция, фосфора с учётом диализного статуса</li>
-                            <li><strong>Оценка протеинурии</strong> — анализ соотношения белок/креатинин в моче в динамике</li>
-                        </ul>
-                    </div>
+                <div class="section-header">
+                    <span class="section-label">Для пациента</span>
+                    <h2 class="section-title">Медицинская история под контролем</h2>
                 </div>
-                
-                <div class="specialists-note">
-                    <p><i class="fas fa-cogs"></i> Для каждой специальности система предоставляет специализированные шаблоны отчётов и наборы анализируемых показателей, соответствующих клиническим рекомендациям.</p>
+                <div class="pat-bento-grid">
+                    <article class="pat-bento-card reveal">
+                        <div class="pat-bento-top">
+                            <div class="pat-bento-badge">24/7</div>
+                        </div>
+                        <h3 class="pat-bento-title">Личный кабинет</h3>
+                        <p class="pat-bento-text">Безопасное хранилище всех лабораторных данных с доступом 24/7 из любой точки мира.</p>
+                        <div class="pat-bento-visual" aria-hidden="true">
+                            <div class="pat-vault">
+                                <div class="pat-vault-row">
+                                    <span class="pat-vault-k">Анализы</span>
+                                    <span class="pat-vault-v">12</span>
+                                </div>
+                                <div class="pat-vault-row">
+                                    <span class="pat-vault-k">Последний визит</span>
+                                    <span class="pat-vault-v">2 дня</span>
+                                </div>
+                                <div class="pat-vault-divider"></div>
+                                <div class="pat-vault-chipset">
+                                    <span class="pat-vault-chip">Кровь</span>
+                                    <span class="pat-vault-chip">Биохимия</span>
+                                    <span class="pat-vault-chip">Гормоны</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pat-bento-card reveal">
+                        <div class="pat-bento-top">
+                            <div class="pat-bento-badge pat-bento-badge--soft">Понятно</div>
+                        </div>
+                        <h3 class="pat-bento-title">Простой отчет</h3>
+                        <p class="pat-bento-text">Разъяснение показателей простым языком без диагнозов помогает снять тревожность пациента.</p>
+                        <div class="pat-bento-visual" aria-hidden="true">
+                            <div class="pat-report">
+                                <div class="pat-report-head">
+                                    <span class="pat-report-title">Сводка</span>
+                                    <span class="pat-report-pill">готово</span>
+                                </div>
+                                <div class="pat-report-lines">
+                                    <span class="pat-report-line" style="width: 92%"></span>
+                                    <span class="pat-report-line" style="width: 78%"></span>
+                                    <span class="pat-report-line" style="width: 86%"></span>
+                                </div>
+                                <div class="pat-report-bars">
+                                    <span class="pat-report-bar" style="height: 34%"></span>
+                                    <span class="pat-report-bar" style="height: 62%"></span>
+                                    <span class="pat-report-bar" style="height: 48%"></span>
+                                    <span class="pat-report-bar" style="height: 72%"></span>
+                                    <span class="pat-report-bar" style="height: 55%"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="pat-bento-card reveal">
+                        <div class="pat-bento-top">
+                            <div class="pat-bento-badge pat-bento-badge--secure">ФЗ-152</div>
+                        </div>
+                        <h3 class="pat-bento-title">Безопасность данных</h3>
+                        <p class="pat-bento-text">Шифрование данных и полное соответствие ФЗ-152 о защите персональных данных.</p>
+                        <div class="pat-bento-visual" aria-hidden="true">
+                            <div class="pat-secure">
+                                <div class="pat-secure-shield">
+                                    <div class="pat-secure-shield-mark"></div>
+                                </div>
+                                <div class="pat-secure-list">
+                                    <div class="pat-secure-item">
+                                        <span class="pat-secure-dot"></span>
+                                        <span class="pat-secure-text">Шифрование при передаче</span>
+                                    </div>
+                                    <div class="pat-secure-item">
+                                        <span class="pat-secure-dot"></span>
+                                        <span class="pat-secure-text">Хранение в защищенном контуре</span>
+                                    </div>
+                                    <div class="pat-secure-item">
+                                        <span class="pat-secure-dot"></span>
+                                        <span class="pat-secure-text">Роли и контроль доступа</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="integration" class="section integration-section alt-bg">
+        <!-- 7. Оставить заявку (Демо) -->
+        <section id="demo" class="section">
             <div class="container">
-                <h2 class="section-title">Интеграция в рабочий процесс</h2>
-                
-                <div class="integration-content">
-                    <div class="integration-text">
-                        <p>Labmetrica разработана с учётом реальных рабочих процессов в медицинских учреждениях. Система не требует радикального изменения привычных схем работы.</p>
-                        
-                        <h3>Варианты использования:</h3>
-                        
-                        <div class="use-case">
-                            <h4><i class="fas fa-user-md"></i> Индивидуальная практика врача</h4>
-                            <p>Ваши врачи-партнёры могут легко загружать анализы, полученные в других лабораториях, чтобы видеть полную картину в истории пациента. Это увеличивает ценность вашего сервиса для них и стимулирует обращение именно к вам для получения целостной аналитики.</p>
-                        </div>
-                        
-                        <div class="use-case">
-                            <h4><i class="fas fa-hospital-alt"></i> Клиническое учреждение</h4>
-                            <p>Интеграция с медицинскими информационными системами через API. Данные лаборатории автоматически поступают в Labmetrica, результаты анализа доступны в карте пациента. Поддерживается разграничение прав доступа для врачей, заведующих отделениями и администрации.</p>
-                        </div>
-                        
-                        <div class="use-case highlighted">
-                            <h4><i class="fas fa-clinic-medical"></i> Диагностический центр / Лаборатория</h4>
-                            <p><strong>Предлагайте Labmetrica как премиум-сервис для ключевых врачей-партнёров.</strong> Расширенная аналитика по исследованиям, проведённым в вашей лаборатории, напрямую повышает лояльность врачей и стимулирует рост числа направлений и среднего чека. Это готовое решение для увеличения вашего CLV (пожизненной ценности клиента) и конкурентного преимущества на рынке.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="integration-features">
-                        <div class="feature-highlight">
-                            <i class="fas fa-shield-alt"></i>
-                            <h3>Безопасность данных</h3>
-                            <p>Полное соответствие требованиям 152-ФЗ и ФЗ-323. Шифрование данных при передаче и хранении, журналирование всех действий, возможность полного удаления данных по требованию.</p>
-                        </div>
-                        
-                        <div class="feature-highlight">
-                            <i class="fas fa-plug"></i>
-                            <h3>Технические требования</h3>
-                            <p>Веб-интерфейс доступен с любого устройства. Не требует установки дополнительного программного обеспечения. Поддерживаются все современные браузеры.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <div class="demo-cta reveal">
+                    <div class="demo-cta-left">
+                        <div class="demo-cta-kicker">Пилот</div>
+                        <h2 class="demo-cta-title">Запустите пилот за 2 недели</h2>
+                        <p class="demo-cta-subtitle">Настроим кабинеты под ваш бренд и покажем результат на ваших данных — без внедрения в программный контур.</p>
 
-        <section id="faq" class="section faq-section">
-            <div class="container">
-                <h2 class="section-title">Часто задаваемые вопросы</h2>
-                <p class="section-subtitle">Ответы на самые популярные вопросы о Labmetrica</p>
-                
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Сколько стоит внедрение Labmetrica для лаборатории?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Стоимость зависит от масштаба лаборатории и необходимого функционала. Мы предлагаем гибкую подписку, которая включает настройку, интеграцию и техническую поддержку. Для точного расчёта стоимости рекомендуем запросить индивидуальную демонстрацию.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Сколько времени занимает внедрение системы?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Базовое внедрение занимает 1-2 недели. Для интеграции с существующими медицинскими информационными системами может потребоваться дополнительное время (до 4 недель). Мы сопровождаем каждый этап внедрения и предоставляем полную техническую поддержку.</p>
+                        <div class="demo-cta-points">
+                            <div class="demo-cta-point">
+                                <div class="demo-cta-ico" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M19 9l-5 5-4-4-3 3"/></svg>
+                                </div>
+                                <div class="demo-cta-text">Аналитика в реальном времени</div>
+                            </div>
+                            <div class="demo-cta-point">
+                                <div class="demo-cta-ico" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                </div>
+                                <div class="demo-cta-text">Безопасность данных</div>
+                            </div>
+                            <div class="demo-cta-point">
+                                <div class="demo-cta-ico" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.73z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>
+                                </div>
+                                <div class="demo-cta-text">Растем вместе с вами</div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Как происходит обучение сотрудников лаборатории?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Мы предоставляем:</p>
-                            <ul>
-                                <li>Видеоуроки и инструкции</li>
-                                <li>Онлайн-тренинги для администраторов системы</li>
-                                <li>Техническую поддержку 24/7</li>
-                                <li>Регулярные вебинары по новым функциям</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Можно ли интегрировать Labmetrica с нашей существующей ЛИС?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Да, Labmetrica имеет открытый API для интеграции с большинством современных лабораторных информационных систем (ЛИС) и медицинских информационных систем (МИС). Наша команда разработчиков поможет настроить интеграцию с вашей текущей системой.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Как обеспечивается безопасность медицинских данных?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Мы используем:</p>
-                            <ul>
-                                <li>Сертифицированные дата-центры уровня Tier III</li>
-                                <li>Полное шифрование данных при передаче и хранении</li>
-                                <li>Регулярное резервное копирование</li>
-                                <li>Строгий контроль доступа и аудит всех действий</li>
-                                <li>Полное соответствие требованиям 152-ФЗ и ФЗ-323</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <h3>Есть ли пробный период для тестирования системы?</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Да, мы предоставляем 14-дневный пробный период с полным доступом ко всем функциям. В течение этого периода наши специалисты помогут настроить систему под ваши нужды и проведут обучение вашей команды.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section id="request" class="section request-section alt-bg">
-            <div class="container">
-                <div class="request-header">
-                    <h2 class="section-title">Запросите демонстрацию для вашей лаборатории</h2>
-                    <p class="section-subtitle">Увидите, как Labmetrica поможет укрепить партнёрские отношения с врачами и увеличить ключевые бизнес-показатели</p>
-                </div>
-                
-                <div class="demo-benefits">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-chart-line"></i>
+                    <div class="demo-cta-right">
+                        <div class="demo-panel">
+                            <div class="demo-panel-title">Оставить заявку</div>
+                            <div class="demo-panel-sub">Ответим в течение дня</div>
+                            <form id="demo-form" class="demo-form demo-form--panel">
+                                <div class="form-group"><input type="text" id="name" placeholder="Ваше имя" required></div>
+                                <div class="form-group"><input type="text" id="organization" placeholder="Название лаборатории" required></div>
+                                <div class="form-group"><input type="text" id="contact" placeholder="Telegram / Email / Телефон" required></div>
+                                <div class="form-group">
+                                    <select id="role" required>
+                                        <option value="" disabled selected>Ваша роль</option>
+                                        <option value="owner">Владелец лаборатории</option>
+                                        <option value="manager">Заведующий / Менеджер</option>
+                                        <option value="doctor">Врач</option>
+                                        <option value="other">Другое</option>
+                                    </select>
+                                </div>
+                                <label class="demo-consent">
+                                    <input type="checkbox" required>
+                                    <span>Я соглашаюсь на обработку персональных данных</span>
+                                </label>
+                                <button type="submit" class="btn btn-primary btn-full">Обсудить пилот</button>
+                            </form>
                         </div>
-                        <h3>Индивидуальная демонстрация</h3>
-                        <p>Покажем систему на примере данных, релевантных для вашей специализации</p>
                     </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Консультация эксперта</h3>
-                        <p>Ответим на все вопросы и поможем оценить потенциал для вашей лаборатории</p>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-calculator"></i>
-                        </div>
-                        <h3>Расчёт ROI</h3>
-                        <p>Поможем оценить экономический эффект от внедрения Labmetrica</p>
-                    </div>
-                </div>
-                
-                <div class="request-card">
-                    <div class="form-intro">
-                        <h3>Заполните форму для получения демо-доступа</h3>
-                        <p>Наш менеджер свяжется с вами в течение 24 часов, чтобы согласовать время демонстрации</p>
-                    </div>
-                    
-                    <form id="demo-form" class="demo-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Имя и фамилия *</label>
-                                <input type="text" id="name" placeholder="Александр Петров" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="position">Должность *</label>
-                                <input type="text" id="position" placeholder="Руководитель лаборатории" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="institution">Лаборатория / Учреждение *</label>
-                                <input type="text" id="institution" placeholder="Медицинская лаборатория «Диагност»" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Рабочая электронная почта *</label>
-                                <input type="email" id="email" placeholder="info@diagnost-lab.ru" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Телефон для связи</label>
-                                <input type="tel" id="phone" placeholder="+7 (999) 123-45-67">
-                            </div>
-                            <div class="form-group">
-                                <label for="employees">Количество сотрудников лаборатории</label>
-                                <select id="employees">
-                                    <option value="" selected>Выберите количество</option>
-                                    <option value="1-10">1-10</option>
-                                    <option value="11-50">11-50</option>
-                                    <option value="51-100">51-100</option>
-                                    <option value="100+">100+</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="specialization">Основная специализация лаборатории *</label>
-                            <select id="specialization" required>
-                                <option value="" disabled selected>Выберите специализацию</option>
-                                <option value="endocrinology">Эндокринология</option>
-                                <option value="hematology">Гематология</option>
-                                <option value="nephrology">Нефрология</option>
-                                <option value="gastroenterology">Гастроэнтерология</option>
-                                <option value="cardiology">Кардиология</option>
-                                <option value="therapy">Терапия</option>
-                                <option value="general">Общая лабораторная диагностика</option>
-                                <option value="other">Другое</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="scenario">Какой сценарий использования вас интересует? *</label>
-                            <select id="scenario" required>
-                                <option value="" disabled selected>Выберите сценарий</option>
-                                <option value="partnership">Укрепление партнёрских отношений с врачами</option>
-                                <option value="growth">Увеличение числа направлений и среднего чека</option>
-                                <option value="competition">Конкурентное преимущество на рынке</option>
-                                <option value="service">Расширение спектра услуг для клиентов</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="challenge">Опишите основные задачи вашей лаборатории *</label>
-                            <textarea id="challenge" placeholder="Например: удержание ключевых врачей-партнёров, увеличение лояльности, рост числа исследований на пациента, конкуренция с сетевыми лабораториями..." rows="3" required></textarea>
-                        </div>
-                        
-                        <div class="form-submit">
-                            <button type="submit" class="btn btn-primary btn-large">
-                                <i class="fas fa-calendar-check"></i> Запросить демонстрацию для лаборатории
-                            </button>
-                            <p class="form-note">
-                                <i class="fas fa-shield-alt"></i> Ваши данные защищены и не будут переданы третьим лицам. Мы свяжемся с вами в течение 24 часов.
-                            </p>
-                        </div>
-                    </form>
                 </div>
             </div>
         </section>
@@ -441,42 +733,21 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-main">
-                    <h3 class="footer-title">Labmetrica</h3>
-                    <p class="footer-tagline">Интеллектуальный аналитический сервис для лабораторий. Превращаем данные в ценность для врачей.</p>
-                    <p class="footer-legal">Labmetrica — система поддержки врачебных решений. Не является медицинским изделием. Окончательное клиническое решение принимает врач на основе комплексной оценки пациента.</p>
+                <div class="footer-brand">
+                    <span class="footer-logo">Labmetrica</span>
+                    <p>IT-инфраструктура для современных лабораторий. Помогаем расти и конкурировать.</p>
                 </div>
-                
                 <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Продукт</h4>
-                        <a href="#value">Ценность для лабораторий</a>
-                        <a href="#process">Процесс работы</a>
-                        <a href="#specialists">Аналитика для специалистов</a>
-                        <a href="#integration">Интеграция</a>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Компания</h4>
-                        <a href="#">О Labmetrica</a>
-                        <a href="#">Контакты</a>
-                        <a href="#">Партнёрская программа</a>
-                        <a href="#faq">Частые вопросы</a>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Документация</h4>
-                        <a href="#">Пользовательское соглашение</a>
-                        <a href="#">Политика конфиденциальности</a>
-                        <a href="#">Описание функционала</a>
-                        <a href="#">Сертификаты</a>
-                    </div>
+                    <a href="#lab-intro">Лабораториям</a>
+                    <a href="#lab-doc-link">Врачам</a>
+                    <a href="#lab-pat-link">Пациентам</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:labs@labmetrica.ru">labs@labmetrica.ru</a>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>© 2026 Labmetrica. Все права защищены.</p>
-                <p>Для лабораторий: <a href="mailto:labs@labmetrica.ru">labs@labmetrica.ru</a> | Телефон: <a href="tel:+78001234567">8 (800) 123-45-67</a></p>
+                <p>© 2026 Labmetrica. Все права защищены. Не является медицинским изделием.</p>
             </div>
         </div>
     </footer>
