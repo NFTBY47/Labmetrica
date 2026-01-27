@@ -40,18 +40,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Hero Nav Active State (Lab / Doctor / Patient)
-    const navTargets = [
-        { id: 'lab-intro', btn: 'a[href="#lab-intro"]' },
-        { id: 'lab-doc-link', btn: 'a[href="#lab-doc-link"]' },
-        { id: 'lab-pat-link', btn: 'a[href="#lab-pat-link"]' }
+    // "Лаборатория" охватывает сразу несколько секций (Почему + Преимущества)
+    const navGroups = [
+        { navId: 'lab-intro', sectionIds: ['lab-intro', 'lab-benefits'] },
+        { navId: 'lab-doc-link', sectionIds: ['lab-doc-link'] },
+        { navId: 'lab-pat-link', sectionIds: ['lab-pat-link'] }
     ];
 
-    const heroNavTargets = navTargets.map(t => document.getElementById(t.id)).filter(Boolean);
+    const heroNavTargets = navGroups
+        .flatMap(group => group.sectionIds.map(id => ({ navId: group.navId, el: document.getElementById(id) })))
+        .filter(item => Boolean(item.el));
 
-    const setHeroNavActive = (id) => {
+    const clearHeroNavActive = () => {
+        heroNavButtons.forEach(btn => btn.classList.remove('active'));
+    };
+
+    const setHeroNavActive = (navId) => {
+        if (!navId) {
+            clearHeroNavActive();
+            return;
+        }
         heroNavButtons.forEach(btn => {
             const href = btn.getAttribute('href');
-            btn.classList.toggle('active', href === `#${id}`);
+            btn.classList.toggle('active', href === `#${navId}`);
         });
     };
 
@@ -73,21 +84,50 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     if (heroNavTargets.length && heroNavButtons.length) {
-        const heroNavObserver = new IntersectionObserver((entries) => {
-            // Find the most visible entry
-            const visible = entries
-                .filter(e => e.isIntersecting)
-                .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        const computeActiveSectionId = () => {
+            const navHeight = heroNav?.offsetHeight || 0;
+            const activationOffset = navHeight + 140;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            const activationPoint = scrollTop + activationOffset;
 
-            if (visible[0]?.target?.id) {
-                setHeroNavActive(visible[0].target.id);
+            // In hero (above the first tracked section) -> no active state
+            const firstTop = heroNavTargets[0].el.getBoundingClientRect().top + scrollTop;
+            if (activationPoint < firstTop) {
+                setHeroNavActive(null);
+                return;
             }
-        }, { 
-            threshold: [0.1, 0.3, 0.5],
-            rootMargin: '-20% 0px -60% 0px'
-        });
 
-        heroNavTargets.forEach(el => heroNavObserver.observe(el));
+            let activeNavId = heroNavTargets[0]?.navId;
+            for (const item of heroNavTargets) {
+                const top = item.el.getBoundingClientRect().top + scrollTop;
+                if (top <= activationPoint) {
+                    activeNavId = item.navId;
+                } else {
+                    break;
+                }
+            }
+
+            const scrolledToBottom = (window.innerHeight + scrollTop) >= (document.documentElement.scrollHeight - 2);
+            if (scrolledToBottom) {
+                activeNavId = heroNavTargets[heroNavTargets.length - 1]?.navId;
+            }
+
+            if (activeNavId) setHeroNavActive(activeNavId);
+        };
+
+        let scrollTicking = false;
+        const onScroll = () => {
+            if (scrollTicking) return;
+            scrollTicking = true;
+            window.requestAnimationFrame(() => {
+                computeActiveSectionId();
+                scrollTicking = false;
+            });
+        };
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll);
+        computeActiveSectionId();
 
         // Hero section observer for transparency
         if (heroSection) {
@@ -134,3 +174,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+ 
