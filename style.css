@@ -37,6 +37,9 @@
     .hero-nav {
         left: 12px;
         right: 12px;
+        width: calc(100% - 24px);
+        max-width: none;
+        transform: none;
     }
 
     .hero-nav-btn {
@@ -3370,10 +3373,12 @@ body {
 @media (max-width: 1024px) {
     .hero-nav {
         top: 16px;
-        max-width: calc(100vw - 40px);
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
+        left: 20px;
+        right: 20px;
+        width: auto;
+        max-width: none;
+        transform: none;
+        overflow: visible;
     }
 
     .hero-nav::-webkit-scrollbar {
@@ -3458,10 +3463,10 @@ body {
         left: 16px;
         right: 16px;
         transform: none;
+        width: calc(100% - 32px);
         max-width: none;
-        width: auto;
-        justify-content: flex-start;
         padding: 6px;
+        gap: 4px;
         border-radius: 16px;
     }
 
@@ -3698,17 +3703,19 @@ body {
     .footer-content { grid-template-columns: 1fr; gap: 40px; }
     
     .hero-nav { 
-        width: auto; 
-        max-width: calc(100% - 32px); 
-        padding: 6px; 
-        left: 50%;
-        transform: translateX(-50%);
+        width: calc(100% - 24px);
+        max-width: none;
+        padding: 6px;
+        left: 12px;
+        right: 12px;
+        transform: none;
     }
     
     .hero-nav-btn { 
         padding: 8px 14px; 
         font-size: 12px; 
         flex: 1;
+        min-width: 0;
         text-align: center;
         justify-content: center;
     }
